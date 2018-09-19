@@ -1,0 +1,45 @@
+<div
+  [ngClass]="{'isMarkRow': isMarked}"
+  class="card horizontal "
+  appHover
+>
+
+  <div class="card-image ">
+    <img  src="{{ user.avatar}}">
+  </div>
+
+  <div class="card-stacked">
+
+    <div class="card-content">
+<app-info></app-info>
+      <p
+      [ngClass]="{'isMark': isMarked}"
+      >{{ user.name | uppercase }}
+      </p>
+      <p>{{ user.address}}</p>
+      <p>{{ user.birthday | date | uppercase }}. {{user.dob}}</p>
+    </div>
+
+    <div class="info">
+      <a>Phone</a>
+      <a>Adress</a>
+      <a>E-mail</a>
+      <a>birthday</a>
+    </div>
+  </div>
+
+  <div class="card-action">
+    <a
+      (click)="onClickTrue()"
+      class="waves-effect waves-teal btn-flat"
+    >
+      Select</a>
+    <a
+      (click)="onClickOff()"
+      class="waves-effect waves-teal btn-flat"
+    >
+      Deselect</a>
+  </div>
+</div>
+
+

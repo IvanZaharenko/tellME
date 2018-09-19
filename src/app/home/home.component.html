@@ -1,0 +1,15 @@
+
+<div class="row">
+  <div class="input-field col s12">
+    <input value="" id="first_name2" type="text" class="validate"    [(ngModel)] = "searchName" >
+    <label class="active" for="first_name2">Search People</label>
+  </div>
+</div>
+
+<div class="col s12 m7">
+  <app-users
+    *ngFor="let userData of users | search:searchName"
+    [user] = userData
+  ></app-users>
+</div>
+
